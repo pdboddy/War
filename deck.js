@@ -13,7 +13,7 @@ export default class Deck {
 	shuffle() {
 		for (let i = this.numberOfCards -1; i > 0; i--) {
 			const newIndex = Math.floor(Math.random() * (i + 1))
-			const oldValue this.cards[newIndex]
+			const oldValue = this.cards[newIndex]
 			this.cards[newIndex] = this.cards[i]
 			this.cards[i] = oldValue
 		}
