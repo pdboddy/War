@@ -70,7 +70,6 @@ function flipCards() {
 	playerCardSlot.appendChild(playerCard.getHTML())
 	
 	updateDeckCount()
-}
 
   if (isRoundWinner(playerCard, computerCard)) {
     text.innerText = "Win"
@@ -93,6 +92,7 @@ function flipCards() {
     text.innerText = "You Win!!"
     stop = true
   }
+}
 
 function updateDeckCount() {
 	computerDeckElement.innerText = computerDeck.numberOfCards
