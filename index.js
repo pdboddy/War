@@ -40,11 +40,6 @@ function cleanBeforeRound() {
 	updateDeckCount()
 }
 
-function updateDeckCount() {
-	computerDeckElement.innerText = computerDeck.numberOfCards
-	playerDeckElement.innerText = playerDeck.numberOfCards
-}
-
 function flipCards() {
 	inRound = true
 	
@@ -53,4 +48,11 @@ function flipCards() {
 	
 	computerCardSlot.appendChild(computerCard.getHTML())
 	playerCardSlot.appendChild(playerCard.getHTML())
+	
+	updateDeckCount()
+}
+
+function updateDeckCount() {
+	computerDeckElement.innerText = computerDeck.numberOfCards
+	playerDeckElement.innerText = playerDeck.numberOfCards
 }
