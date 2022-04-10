@@ -54,6 +54,8 @@ body {
 .card {
 	height: 100%;
 	width: 100%;
+	border: 1px solid black;
+	background-color: white;
 	border-radius: .5rem;
 	display: flex;
 	justify-content: center;
