@@ -6,7 +6,17 @@ const computerDeckElement = document.querySelector('.computer-deck')
 const playerDeckElement = document.querySelector('.player-deck')
 const text = document.querySelector('.text')
 
-let playerDeck, computerDeck
+let playerDeck, computerDeck, inRound
+
+document.addEventListener('click', () => {
+	if (inRound) {
+		cleanBeforeRound()
+	}
+	
+	else {
+		flipCards()
+	}
+})
 
 startGame()
 function startGame() {
@@ -16,11 +26,13 @@ function startGame() {
 	const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
 	playerDeck = new Deck(deck.cards.slice(0, deckMidPoint))
 	computerDeck = new Deck(deck.cards.slice(deckMidPoint, deck.numberOfCards))
-	
+	inRound = false
+
 	cleanBeforeRound()
 }
 
 function cleanBeforeRound() {
+	inRound = false
 	computerCardSlot.innerHTML = ''
 	playerCardSlot.innerHTML = ''
 	text.innerText = ''
@@ -31,4 +43,14 @@ function cleanBeforeRound() {
 function updateDeckCount() {
 	computerDeckElement.innerText = computerDeck.numberOfCards
 	playerDeckElement.innerText = playerDeck.numberOfCards
+}
+
+function flipCards() {
+	inRound = true
+	
+	const playerCard = playerDeck.pop()
+	const computerCard = computerDeck.pop()
+	
+	computerCardSlot.appendChild(computerCard.getHTML())
+	playerCardSlot.appendChild(playerCard.getHTML())
 }
