@@ -43,8 +43,8 @@ function startGame() {
 	deck.shuffle()
 	
 	const deckMidpoint = Math.ceil(deck.numberOfCards / 2)
-	playerDeck = new Deck(deck.cards.slice(0, deckMidPoint))
-	computerDeck = new Deck(deck.cards.slice(deckMidPoint, deck.numberOfCards))
+	playerDeck = new Deck(deck.cards.slice(0, deckMidpoint))
+	computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards))
 	inRound = false
 	stop = false
 
