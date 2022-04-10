@@ -93,7 +93,6 @@ function flipCards() {
     text.innerText = "You Win!!"
     stop = true
   }
-}
 
 function updateDeckCount() {
 	computerDeckElement.innerText = computerDeck.numberOfCards
